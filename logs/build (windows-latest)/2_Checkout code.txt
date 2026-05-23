@@ -1,0 +1,75 @@
+﻿2026-05-23T11:52:56.2642918Z ##[group]Run actions/checkout@v4
+2026-05-23T11:52:56.2643987Z with:
+2026-05-23T11:52:56.2644661Z   repository: Everett406/LiveSort-Electron
+2026-05-23T11:52:56.2645406Z   token: ***
+2026-05-23T11:52:56.2645788Z   ssh-strict: true
+2026-05-23T11:52:56.2646159Z   ssh-user: git
+2026-05-23T11:52:56.2646544Z   persist-credentials: true
+2026-05-23T11:52:56.2647527Z   clean: true
+2026-05-23T11:52:56.2647952Z   sparse-checkout-cone-mode: true
+2026-05-23T11:52:56.2648422Z   fetch-depth: 1
+2026-05-23T11:52:56.2648801Z   fetch-tags: false
+2026-05-23T11:52:56.2649187Z   show-progress: true
+2026-05-23T11:52:56.2649803Z   lfs: false
+2026-05-23T11:52:56.2650170Z   submodules: false
+2026-05-23T11:52:56.2650589Z   set-safe-directory: true
+2026-05-23T11:52:56.2651325Z ##[endgroup]
+2026-05-23T11:52:56.5079794Z Syncing repository: Everett406/LiveSort-Electron
+2026-05-23T11:52:56.5082121Z ##[group]Getting Git version info
+2026-05-23T11:52:56.5083310Z Working directory is 'D:\a\LiveSort-Electron\LiveSort-Electron'
+2026-05-23T11:52:56.6142082Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-05-23T11:52:56.9874804Z git version 2.54.0.windows.1
+2026-05-23T11:52:56.9926845Z ##[endgroup]
+2026-05-23T11:52:56.9947988Z Temporarily overriding HOME='D:\a\_temp\6b12bb2e-42d9-435b-9927-459ff94192fe' before making global git config changes
+2026-05-23T11:52:56.9949814Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-23T11:52:56.9959744Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\LiveSort-Electron\LiveSort-Electron
+2026-05-23T11:52:57.0570261Z Deleting the contents of 'D:\a\LiveSort-Electron\LiveSort-Electron'
+2026-05-23T11:52:57.0577164Z ##[group]Initializing the repository
+2026-05-23T11:52:57.0587856Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\LiveSort-Electron\LiveSort-Electron
+2026-05-23T11:52:57.1516698Z Initialized empty Git repository in D:/a/LiveSort-Electron/LiveSort-Electron/.git/
+2026-05-23T11:52:57.1572978Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Everett406/LiveSort-Electron
+2026-05-23T11:52:57.2148817Z ##[endgroup]
+2026-05-23T11:52:57.2150267Z ##[group]Disabling automatic garbage collection
+2026-05-23T11:52:57.2159868Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-05-23T11:52:57.2452171Z ##[endgroup]
+2026-05-23T11:52:57.2453700Z ##[group]Setting up auth
+2026-05-23T11:52:57.2465736Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-05-23T11:52:57.2763456Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-05-23T11:52:58.6792035Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-23T11:52:58.7087490Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-05-23T11:52:59.2621247Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-23T11:52:59.2924179Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-05-23T11:52:59.8014332Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-05-23T11:52:59.8322407Z ##[endgroup]
+2026-05-23T11:52:59.8322941Z ##[group]Fetching the repository
+2026-05-23T11:52:59.8338554Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +295abc48dc7a59f09f52a2f9718eeebaef4cedc9:refs/tags/v1.0.0
+2026-05-23T11:53:00.7774228Z From https://github.com/Everett406/LiveSort-Electron
+2026-05-23T11:53:00.7775678Z  * [new ref]         295abc48dc7a59f09f52a2f9718eeebaef4cedc9 -> v1.0.0
+2026-05-23T11:53:00.8133776Z ##[endgroup]
+2026-05-23T11:53:00.8134463Z ##[group]Determining the checkout info
+2026-05-23T11:53:00.8136516Z ##[endgroup]
+2026-05-23T11:53:00.8148205Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-05-23T11:53:00.8577834Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-05-23T11:53:00.8908715Z ##[group]Checking out the ref
+2026-05-23T11:53:00.8909567Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v1.0.0
+2026-05-23T11:53:00.9517731Z Note: switching to 'refs/tags/v1.0.0'.
+2026-05-23T11:53:00.9518052Z 
+2026-05-23T11:53:00.9518268Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-23T11:53:00.9518995Z changes and commit them, and you can discard any commits you make in this
+2026-05-23T11:53:00.9519867Z state without impacting any branches by switching back to a branch.
+2026-05-23T11:53:00.9520296Z 
+2026-05-23T11:53:00.9520493Z If you want to create a new branch to retain commits you create, you may
+2026-05-23T11:53:00.9520948Z do so (now or later) by using -c with the switch command. Example:
+2026-05-23T11:53:00.9521187Z 
+2026-05-23T11:53:00.9521280Z   git switch -c <new-branch-name>
+2026-05-23T11:53:00.9521440Z 
+2026-05-23T11:53:00.9521533Z Or undo this operation with:
+2026-05-23T11:53:00.9521710Z 
+2026-05-23T11:53:00.9521794Z   git switch -
+2026-05-23T11:53:00.9521902Z 
+2026-05-23T11:53:00.9522101Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-23T11:53:00.9522389Z 
+2026-05-23T11:53:00.9522614Z HEAD is now at 295abc4 feat: add folder import + fix GitHub Actions cache
+2026-05-23T11:53:00.9628789Z ##[endgroup]
+2026-05-23T11:53:01.0040167Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-05-23T11:53:01.0318900Z 295abc48dc7a59f09f52a2f9718eeebaef4cedc9

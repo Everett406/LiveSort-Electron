@@ -55,8 +55,7 @@
           "arch": ["x64", "arm64"]
         }
       ],
-      "category": "public.app-category.music",
-      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+      "category": "public.app-category.music"
     },
     "win": {
       "target": [
@@ -68,8 +67,7 @@
           "target": "portable",
           "arch": ["x64"]
         }
-      ],
-      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+      ]
     },
     "linux": {
       "target": [
@@ -82,8 +80,7 @@
           "arch": ["x64"]
         }
       ],
-      "category": "AudioVideo",
-      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+      "category": "AudioVideo"
     },
     "nsis": {
       "oneClick": false,

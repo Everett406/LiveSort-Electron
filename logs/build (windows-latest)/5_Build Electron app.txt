@@ -1,0 +1,13 @@
+﻿2026-05-23T11:53:36.8090161Z ##[group]Run npx electron-builder --publish=never
+2026-05-23T11:53:36.8090594Z [36;1mnpx electron-builder --publish=never[0m
+2026-05-23T11:53:36.8149905Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-05-23T11:53:36.8150225Z env:
+2026-05-23T11:53:36.8150593Z   GH_TOKEN: ***
+2026-05-23T11:53:36.8150754Z ##[endgroup]
+2026-05-23T11:53:38.5421513Z   • electron-builder  version=24.13.3 os=10.0.26100
+2026-05-23T11:53:38.5485060Z   • loaded configuration  file=package.json ("build" field)
+2026-05-23T11:53:38.7661530Z   • packaging       platform=win32 arch=x64 electron=30.5.1 appOutDir=dist\win-unpacked
+2026-05-23T11:53:38.9316109Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-win32-x64.zip size=109 MB parts=8
+2026-05-23T11:53:39.1571880Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-win32-x64.zip duration=376ms
+2026-05-23T11:53:41.0763858Z   ⨯ image D:\a\LiveSort-Electron\LiveSort-Electron\LiveSortApp\static\livesort-brand-icon.png must be at least 256x256
+2026-05-23T11:53:41.2285969Z ##[error]Process completed with exit code 1.
