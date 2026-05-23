@@ -1,0 +1,328 @@
+﻿2026-05-23T11:57:55.1315730Z Current runner version: '2.334.0'
+2026-05-23T11:57:55.1331360Z ##[group]Runner Image Provisioner
+2026-05-23T11:57:55.1331860Z Hosted Compute Agent
+2026-05-23T11:57:55.1332240Z Version: 20260213.493
+2026-05-23T11:57:55.1332630Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-05-23T11:57:55.1333090Z Build Date: 2026-02-13T00:28:41Z
+2026-05-23T11:57:55.1333520Z Worker ID: {dedc3595-cdc2-4d95-a992-717b682bb409}
+2026-05-23T11:57:55.1333980Z Azure Region: westus
+2026-05-23T11:57:55.1334340Z ##[endgroup]
+2026-05-23T11:57:55.1335150Z ##[group]Operating System
+2026-05-23T11:57:55.1335530Z macOS
+2026-05-23T11:57:55.1335830Z 15.7.7
+2026-05-23T11:57:55.1336130Z 24G720
+2026-05-23T11:57:55.1336420Z ##[endgroup]
+2026-05-23T11:57:55.1336740Z ##[group]Runner Image
+2026-05-23T11:57:55.1337070Z Image: macos-15-arm64
+2026-05-23T11:57:55.1337390Z Version: 20260520.0085.1
+2026-05-23T11:57:55.1338400Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20260520.0085/images/macos/macos-15-arm64-Readme.md
+2026-05-23T11:57:55.1339430Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20260520.0085
+2026-05-23T11:57:55.1340030Z ##[endgroup]
+2026-05-23T11:57:55.1340690Z ##[group]GITHUB_TOKEN Permissions
+2026-05-23T11:57:55.1341690Z Contents: write
+2026-05-23T11:57:55.1342000Z Metadata: read
+2026-05-23T11:57:55.1342310Z ##[endgroup]
+2026-05-23T11:57:55.1343560Z Secret source: Actions
+2026-05-23T11:57:55.1343980Z Prepare workflow directory
+2026-05-23T11:57:55.1602850Z Prepare all required actions
+2026-05-23T11:57:55.1630200Z Getting action download info
+2026-05-23T11:57:55.3695250Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-05-23T11:57:55.6428550Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-05-23T11:57:55.8050060Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-05-23T11:57:55.9802850Z Complete job name: build (macos-latest)
+2026-05-23T11:57:56.0233750Z ##[group]Run actions/checkout@v4
+2026-05-23T11:57:56.0234310Z with:
+2026-05-23T11:57:56.0234630Z   repository: Everett406/LiveSort-Electron
+2026-05-23T11:57:56.0235200Z   token: ***
+2026-05-23T11:57:56.0235480Z   ssh-strict: true
+2026-05-23T11:57:56.0235780Z   ssh-user: git
+2026-05-23T11:57:56.0236070Z   persist-credentials: true
+2026-05-23T11:57:56.0236400Z   clean: true
+2026-05-23T11:57:56.0236690Z   sparse-checkout-cone-mode: true
+2026-05-23T11:57:56.0237040Z   fetch-depth: 1
+2026-05-23T11:57:56.0237320Z   fetch-tags: false
+2026-05-23T11:57:56.0237630Z   show-progress: true
+2026-05-23T11:57:56.0237940Z   lfs: false
+2026-05-23T11:57:56.0238230Z   submodules: false
+2026-05-23T11:57:56.0238530Z   set-safe-directory: true
+2026-05-23T11:57:56.0238970Z ##[endgroup]
+2026-05-23T11:57:56.3464480Z Syncing repository: Everett406/LiveSort-Electron
+2026-05-23T11:57:56.3465840Z ##[group]Getting Git version info
+2026-05-23T11:57:56.3467100Z Working directory is '/Users/runner/work/LiveSort-Electron/LiveSort-Electron'
+2026-05-23T11:57:56.3467960Z [command]/opt/homebrew/bin/git version
+2026-05-23T11:57:56.3736290Z git version 2.54.0
+2026-05-23T11:57:56.3761840Z ##[endgroup]
+2026-05-23T11:57:56.3772330Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/19c9b6b1-72d4-4d76-8a3f-9a58653adab9/.gitconfig'
+2026-05-23T11:57:56.3786380Z Temporarily overriding HOME='/Users/runner/work/_temp/19c9b6b1-72d4-4d76-8a3f-9a58653adab9' before making global git config changes
+2026-05-23T11:57:56.3787410Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-23T11:57:56.3790250Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/LiveSort-Electron/LiveSort-Electron
+2026-05-23T11:57:56.3889120Z Deleting the contents of '/Users/runner/work/LiveSort-Electron/LiveSort-Electron'
+2026-05-23T11:57:56.3891770Z ##[group]Initializing the repository
+2026-05-23T11:57:56.3896480Z [command]/opt/homebrew/bin/git init /Users/runner/work/LiveSort-Electron/LiveSort-Electron
+2026-05-23T11:57:56.4096390Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-23T11:57:56.4097650Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-23T11:57:56.4098430Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-23T11:57:56.4098960Z hint: call:
+2026-05-23T11:57:56.4099250Z hint:
+2026-05-23T11:57:56.4099640Z hint: 	git config --global init.defaultBranch <name>
+2026-05-23T11:57:56.4100070Z hint:
+2026-05-23T11:57:56.4100490Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-23T11:57:56.4101130Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-23T11:57:56.4101640Z hint:
+2026-05-23T11:57:56.4101940Z hint: 	git branch -m <name>
+2026-05-23T11:57:56.4102280Z hint:
+2026-05-23T11:57:56.4102710Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-23T11:57:56.4103520Z Initialized empty Git repository in /Users/runner/work/LiveSort-Electron/LiveSort-Electron/.git/
+2026-05-23T11:57:56.4104980Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Everett406/LiveSort-Electron
+2026-05-23T11:57:56.4181730Z ##[endgroup]
+2026-05-23T11:57:56.4182340Z ##[group]Disabling automatic garbage collection
+2026-05-23T11:57:56.4183830Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-05-23T11:57:56.4237970Z ##[endgroup]
+2026-05-23T11:57:56.4238550Z ##[group]Setting up auth
+2026-05-23T11:57:56.4242670Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-23T11:57:56.4292440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-23T11:57:56.5162440Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-23T11:57:56.5221630Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-23T11:57:56.5810810Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-23T11:57:56.5857540Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-23T11:57:56.6460320Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-23T11:57:56.6509570Z ##[endgroup]
+2026-05-23T11:57:56.6510140Z ##[group]Fetching the repository
+2026-05-23T11:57:56.6514300Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +33f2eb50397e3279a84558ce168add2b4888df84:refs/tags/v1.0.0
+2026-05-23T11:57:57.6039510Z From https://github.com/Everett406/LiveSort-Electron
+2026-05-23T11:57:57.6055590Z  * [new ref]         33f2eb50397e3279a84558ce168add2b4888df84 -> v1.0.0
+2026-05-23T11:57:57.6116830Z ##[endgroup]
+2026-05-23T11:57:57.6117700Z ##[group]Determining the checkout info
+2026-05-23T11:57:57.6118530Z ##[endgroup]
+2026-05-23T11:57:57.6119280Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-05-23T11:57:57.6182920Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-23T11:57:57.6232440Z ##[group]Checking out the ref
+2026-05-23T11:57:57.6233560Z [command]/opt/homebrew/bin/git checkout --progress --force refs/tags/v1.0.0
+2026-05-23T11:57:57.6372690Z HEAD is now at 33f2eb5 chore: remove accidentally committed CI logs
+2026-05-23T11:57:57.6457360Z ##[endgroup]
+2026-05-23T11:57:57.6482310Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-05-23T11:57:57.6536120Z 33f2eb50397e3279a84558ce168add2b4888df84
+2026-05-23T11:57:57.6800610Z ##[group]Run actions/setup-node@v4
+2026-05-23T11:57:57.6801520Z with:
+2026-05-23T11:57:57.6802020Z   node-version: 20
+2026-05-23T11:57:57.6802580Z   always-auth: false
+2026-05-23T11:57:57.6803150Z   check-latest: false
+2026-05-23T11:57:57.6803890Z   token: ***
+2026-05-23T11:57:57.6804400Z ##[endgroup]
+2026-05-23T11:57:57.8142410Z Attempting to download 20...
+2026-05-23T11:57:59.0506970Z Acquiring 20.20.2 - arm64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-darwin-arm64.tar.gz
+2026-05-23T11:57:59.7269580Z Extracting ...
+2026-05-23T11:57:59.7390700Z [command]/usr/bin/tar xz --strip 1 -C /Users/runner/work/_temp/5cc29813-ab92-4346-8d56-4718dc2a73cc -f /Users/runner/work/_temp/f5fa5eb7-7af3-4171-b736-9764706c3cc4
+2026-05-23T11:58:00.6541750Z Adding to the cache ...
+2026-05-23T11:58:02.0668190Z ##[group]Environment details
+2026-05-23T11:58:02.3394340Z node: v20.20.2
+2026-05-23T11:58:02.3394980Z npm: 10.8.2
+2026-05-23T11:58:02.3395320Z yarn: 1.22.22
+2026-05-23T11:58:02.3395870Z ##[endgroup]
+2026-05-23T11:58:02.3607670Z ##[group]Run npm install
+2026-05-23T11:58:02.3607960Z [36;1mnpm install[0m
+2026-05-23T11:58:02.3649640Z shell: /bin/bash -e {0}
+2026-05-23T11:58:02.3649970Z ##[endgroup]
+2026-05-23T11:58:07.8786160Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-05-23T11:58:08.1056840Z npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2026-05-23T11:58:08.2367950Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-05-23T11:58:08.4682910Z npm warn deprecated tar@6.2.1: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-05-23T11:58:08.6527340Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-05-23T11:58:12.6419180Z 
+2026-05-23T11:58:12.6425640Z added 323 packages, and audited 324 packages in 10s
+2026-05-23T11:58:12.6442470Z 
+2026-05-23T11:58:12.6442910Z 49 packages are looking for funding
+2026-05-23T11:58:12.6448320Z   run `npm fund` for details
+2026-05-23T11:58:12.7009390Z 
+2026-05-23T11:58:12.7010140Z 6 high severity vulnerabilities
+2026-05-23T11:58:12.7010380Z 
+2026-05-23T11:58:12.7010620Z To address all issues (including breaking changes), run:
+2026-05-23T11:58:12.7010980Z   npm audit fix --force
+2026-05-23T11:58:12.7011210Z 
+2026-05-23T11:58:12.7011310Z Run `npm audit` for details.
+2026-05-23T11:58:12.7293030Z ##[group]Run npx electron-builder --publish=never
+2026-05-23T11:58:12.7293450Z [36;1mnpx electron-builder --publish=never[0m
+2026-05-23T11:58:12.7330290Z shell: /bin/bash -e {0}
+2026-05-23T11:58:12.7330570Z env:
+2026-05-23T11:58:12.7331040Z   GH_TOKEN: ***
+2026-05-23T11:58:12.7331190Z ##[endgroup]
+2026-05-23T11:58:13.3930260Z   • electron-builder  version=24.13.3 os=24.6.0
+2026-05-23T11:58:13.3965380Z   • loaded configuration  file=package.json ("build" field)
+2026-05-23T11:58:13.6112200Z   • packaging       platform=darwin arch=x64 electron=30.5.1 appOutDir=dist/mac
+2026-05-23T11:58:14.1581430Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-x64.zip size=102 MB parts=6
+2026-05-23T11:58:14.5091030Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-x64.zip duration=888ms
+2026-05-23T11:58:15.9180030Z   • default Electron icon is used  reason=application icon is not set
+2026-05-23T11:58:15.9618840Z   • skipped macOS application code signing  reason=cannot find valid "Developer ID Application" identity or custom non-Apple code signing certificate, it could cause some undefined behaviour, e.g. macOS localized description not visible, see https://electron.build/code-signing allIdentities=     0 identities found
+2026-05-23T11:58:15.9620350Z                                                 Valid identities only
+2026-05-23T11:58:15.9620620Z      0 valid identities found
+2026-05-23T11:58:15.9624180Z   • building        target=DMG arch=x64 file=dist/LiveSort-1.0.0.dmg
+2026-05-23T11:58:15.9625990Z   • building        target=macOS zip arch=x64 file=dist/LiveSort-1.0.0-mac.zip
+2026-05-23T11:58:15.9694450Z   • Detected arm64 process, HFS+ is unavailable. Creating dmg with APFS - supports Mac OSX 10.12+
+2026-05-23T11:58:15.9767550Z   • packaging       platform=darwin arch=arm64 electron=30.5.1 appOutDir=dist/mac-arm64
+2026-05-23T11:58:16.4096450Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-arm64.zip size=96 MB parts=6
+2026-05-23T11:58:16.7668620Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-arm64.zip duration=777ms
+2026-05-23T11:58:18.4628490Z   • skipped macOS application code signing  reason=cannot find valid "Developer ID Application" identity or custom non-Apple code signing certificate, it could cause some undefined behaviour, e.g. macOS localized description not visible, see https://electron.build/code-signing allIdentities=     0 identities found
+2026-05-23T11:58:18.4727950Z                                                 Valid identities only
+2026-05-23T11:58:18.4828090Z      0 valid identities found
+2026-05-23T11:58:18.4929590Z   • building        target=DMG arch=arm64 file=dist/LiveSort-1.0.0-arm64.dmg
+2026-05-23T11:58:18.5049730Z   • building        target=macOS zip arch=arm64 file=dist/LiveSort-1.0.0-arm64-mac.zip
+2026-05-23T11:58:18.5150680Z   • Detected arm64 process, HFS+ is unavailable. Creating dmg with APFS - supports Mac OSX 10.12+
+2026-05-23T11:59:03.0261120Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-arm64.dmg.blockmap
+2026-05-23T11:59:06.0305800Z   • building block map  blockMapFile=dist/LiveSort-1.0.0.dmg.blockmap
+2026-05-23T11:59:09.8015060Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-arm64-mac.zip.blockmap
+2026-05-23T11:59:13.3627300Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-mac.zip.blockmap
+2026-05-23T11:59:14.2100260Z ##[group]Run actions/upload-artifact@v4
+2026-05-23T11:59:14.2100630Z with:
+2026-05-23T11:59:14.2100830Z   name: livesort-macos-latest
+2026-05-23T11:59:14.2101060Z   path: dist/*
+2026-05-23T11:59:14.2101270Z   if-no-files-found: error
+2026-05-23T11:59:14.2101550Z   compression-level: 6
+2026-05-23T11:59:14.2101760Z   overwrite: false
+2026-05-23T11:59:14.2101960Z   include-hidden-files: false
+2026-05-23T11:59:14.2102270Z ##[endgroup]
+2026-05-23T11:59:14.7147350Z With the provided path, there will be 542 files uploaded
+2026-05-23T11:59:14.7147880Z Artifact name is valid!
+2026-05-23T11:59:14.7148110Z Root directory input is valid!
+2026-05-23T11:59:14.8408080Z Beginning upload of artifact content to blob storage
+2026-05-23T11:59:15.2509980Z Uploaded bytes 8388608
+2026-05-23T11:59:15.4224220Z Uploaded bytes 16777216
+2026-05-23T11:59:15.6556200Z Uploaded bytes 25165824
+2026-05-23T11:59:15.8038170Z Uploaded bytes 33554432
+2026-05-23T11:59:16.0749490Z Uploaded bytes 41943040
+2026-05-23T11:59:16.2236550Z Uploaded bytes 50331648
+2026-05-23T11:59:16.4197000Z Uploaded bytes 58720256
+2026-05-23T11:59:16.6272480Z Uploaded bytes 67108864
+2026-05-23T11:59:16.8328650Z Uploaded bytes 75497472
+2026-05-23T11:59:17.0279220Z Uploaded bytes 83886080
+2026-05-23T11:59:17.2383630Z Uploaded bytes 92274688
+2026-05-23T11:59:17.4098120Z Uploaded bytes 100663296
+2026-05-23T11:59:17.6590980Z Uploaded bytes 109051904
+2026-05-23T11:59:17.8687360Z Uploaded bytes 117440512
+2026-05-23T11:59:18.0315150Z Uploaded bytes 125829120
+2026-05-23T11:59:18.2685570Z Uploaded bytes 134217728
+2026-05-23T11:59:18.4194640Z Uploaded bytes 142606336
+2026-05-23T11:59:18.6403420Z Uploaded bytes 150994944
+2026-05-23T11:59:18.7964520Z Uploaded bytes 159383552
+2026-05-23T11:59:19.1379070Z Uploaded bytes 167772160
+2026-05-23T11:59:19.2105400Z Uploaded bytes 176160768
+2026-05-23T11:59:19.4332380Z Uploaded bytes 184549376
+2026-05-23T11:59:19.6152520Z Uploaded bytes 192937984
+2026-05-23T11:59:19.8969910Z Uploaded bytes 201326592
+2026-05-23T11:59:20.0650560Z Uploaded bytes 209715200
+2026-05-23T11:59:20.2368640Z Uploaded bytes 218103808
+2026-05-23T11:59:20.4478580Z Uploaded bytes 226492416
+2026-05-23T11:59:20.6344680Z Uploaded bytes 234881024
+2026-05-23T11:59:20.8268420Z Uploaded bytes 243269632
+2026-05-23T11:59:20.9894690Z Uploaded bytes 251658240
+2026-05-23T11:59:21.2364270Z Uploaded bytes 260046848
+2026-05-23T11:59:21.4223410Z Uploaded bytes 268435456
+2026-05-23T11:59:21.6513530Z Uploaded bytes 276824064
+2026-05-23T11:59:21.8697000Z Uploaded bytes 285212672
+2026-05-23T11:59:22.0897950Z Uploaded bytes 293601280
+2026-05-23T11:59:22.2255720Z Uploaded bytes 301989888
+2026-05-23T11:59:22.4551640Z Uploaded bytes 310378496
+2026-05-23T11:59:22.6565020Z Uploaded bytes 318767104
+2026-05-23T11:59:22.8974900Z Uploaded bytes 327155712
+2026-05-23T11:59:23.0592270Z Uploaded bytes 335544320
+2026-05-23T11:59:23.3484870Z Uploaded bytes 343932928
+2026-05-23T11:59:23.4525140Z Uploaded bytes 352321536
+2026-05-23T11:59:23.6991000Z Uploaded bytes 360710144
+2026-05-23T11:59:23.9702240Z Uploaded bytes 369098752
+2026-05-23T11:59:24.1459890Z Uploaded bytes 377487360
+2026-05-23T11:59:24.3405290Z Uploaded bytes 385875968
+2026-05-23T11:59:24.8150780Z Uploaded bytes 394264576
+2026-05-23T11:59:25.3017080Z Uploaded bytes 402653184
+2026-05-23T11:59:25.7724130Z Uploaded bytes 411041792
+2026-05-23T11:59:26.2292110Z Uploaded bytes 419430400
+2026-05-23T11:59:26.6656080Z Uploaded bytes 427819008
+2026-05-23T11:59:27.1066580Z Uploaded bytes 436207616
+2026-05-23T11:59:27.6021190Z Uploaded bytes 444596224
+2026-05-23T11:59:27.9730590Z Uploaded bytes 452984832
+2026-05-23T11:59:28.6555880Z Uploaded bytes 461373440
+2026-05-23T11:59:29.1441610Z Uploaded bytes 469762048
+2026-05-23T11:59:29.6871110Z Uploaded bytes 478150656
+2026-05-23T11:59:30.0766450Z Uploaded bytes 486539264
+2026-05-23T11:59:30.5341870Z Uploaded bytes 494927872
+2026-05-23T11:59:31.1413990Z Uploaded bytes 503316480
+2026-05-23T11:59:31.6039600Z Uploaded bytes 511705088
+2026-05-23T11:59:32.0133220Z Uploaded bytes 520093696
+2026-05-23T11:59:32.4966100Z Uploaded bytes 528482304
+2026-05-23T11:59:32.9203130Z Uploaded bytes 536870912
+2026-05-23T11:59:33.4974070Z Uploaded bytes 545259520
+2026-05-23T11:59:33.8963040Z Uploaded bytes 553648128
+2026-05-23T11:59:34.4702250Z Uploaded bytes 562036736
+2026-05-23T11:59:35.0415470Z Uploaded bytes 570425344
+2026-05-23T11:59:35.6026050Z Uploaded bytes 578813952
+2026-05-23T11:59:36.1968280Z Uploaded bytes 587202560
+2026-05-23T11:59:36.8352400Z Uploaded bytes 595591168
+2026-05-23T11:59:37.3336370Z Uploaded bytes 603979776
+2026-05-23T11:59:37.7958230Z Uploaded bytes 612368384
+2026-05-23T11:59:38.3024460Z Uploaded bytes 620756992
+2026-05-23T11:59:38.8083080Z Uploaded bytes 629145600
+2026-05-23T11:59:39.2569730Z Uploaded bytes 637534208
+2026-05-23T11:59:39.7241470Z Uploaded bytes 645922816
+2026-05-23T11:59:40.1715850Z Uploaded bytes 654311424
+2026-05-23T11:59:40.8740770Z Uploaded bytes 662700032
+2026-05-23T11:59:41.4140560Z Uploaded bytes 671088640
+2026-05-23T11:59:41.9868720Z Uploaded bytes 679477248
+2026-05-23T11:59:42.3015110Z Uploaded bytes 687865856
+2026-05-23T11:59:42.8182030Z Uploaded bytes 696254464
+2026-05-23T11:59:43.2284140Z Uploaded bytes 704643072
+2026-05-23T11:59:43.7003570Z Uploaded bytes 713031680
+2026-05-23T11:59:44.0544640Z Uploaded bytes 721420288
+2026-05-23T11:59:44.4533430Z Uploaded bytes 729808896
+2026-05-23T11:59:44.9200170Z Uploaded bytes 738197504
+2026-05-23T11:59:45.3216840Z Uploaded bytes 746586112
+2026-05-23T11:59:45.9469430Z Uploaded bytes 754974720
+2026-05-23T11:59:46.2731570Z Uploaded bytes 763363328
+2026-05-23T11:59:46.9266010Z Uploaded bytes 771751936
+2026-05-23T11:59:47.4556240Z Uploaded bytes 780140544
+2026-05-23T11:59:47.8720880Z Uploaded bytes 788529152
+2026-05-23T11:59:48.2236040Z Uploaded bytes 796917760
+2026-05-23T11:59:48.7192170Z Uploaded bytes 805306368
+2026-05-23T11:59:49.2307230Z Uploaded bytes 813694976
+2026-05-23T11:59:49.5014740Z Uploaded bytes 822083584
+2026-05-23T11:59:49.9311870Z Uploaded bytes 830472192
+2026-05-23T11:59:50.3130660Z Uploaded bytes 838860800
+2026-05-23T11:59:50.7364830Z Uploaded bytes 847249408
+2026-05-23T11:59:51.2924010Z Uploaded bytes 855638016
+2026-05-23T11:59:51.7258020Z Uploaded bytes 864026624
+2026-05-23T11:59:52.3516650Z Uploaded bytes 872415232
+2026-05-23T11:59:52.7349820Z Uploaded bytes 880803840
+2026-05-23T11:59:53.2664340Z Uploaded bytes 889192448
+2026-05-23T11:59:53.6268690Z Uploaded bytes 897581056
+2026-05-23T11:59:54.0970650Z Uploaded bytes 905969664
+2026-05-23T11:59:54.5282490Z Uploaded bytes 914358272
+2026-05-23T11:59:54.9051170Z Uploaded bytes 922746880
+2026-05-23T11:59:55.2876000Z Uploaded bytes 931135488
+2026-05-23T11:59:55.7512550Z Uploaded bytes 939524096
+2026-05-23T11:59:56.2661010Z Uploaded bytes 947912704
+2026-05-23T11:59:56.6769000Z Uploaded bytes 956301312
+2026-05-23T11:59:57.2140760Z Uploaded bytes 964689920
+2026-05-23T11:59:57.8591630Z Uploaded bytes 973078528
+2026-05-23T11:59:58.1753830Z Uploaded bytes 981467136
+2026-05-23T11:59:58.3275970Z Uploaded bytes 983927739
+2026-05-23T11:59:58.3504260Z Finished uploading artifact content to blob storage!
+2026-05-23T11:59:58.3605940Z SHA256 digest of uploaded artifact zip is 4596e748b55d6e0e712df36660f5dedaa742a4cf46083bd2c96e558bb689bdfa
+2026-05-23T11:59:58.3707150Z Finalizing artifact upload
+2026-05-23T11:59:58.5145080Z Artifact livesort-macos-latest.zip successfully finalized. Artifact ID 7176713690
+2026-05-23T11:59:58.5145980Z Artifact livesort-macos-latest has been successfully uploaded! Final size is 983927739 bytes. Artifact ID is 7176713690
+2026-05-23T11:59:58.5149610Z Artifact download URL: https://github.com/Everett406/LiveSort-Electron/actions/runs/26332048857/artifacts/7176713690
+2026-05-23T11:59:58.5217550Z Post job cleanup.
+2026-05-23T11:59:58.6536690Z Post job cleanup.
+2026-05-23T11:59:58.7425790Z [command]/opt/homebrew/bin/git version
+2026-05-23T11:59:58.7628130Z git version 2.54.0
+2026-05-23T11:59:58.7649970Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/29068ca1-3a75-4761-a606-e45747bdbb2a/.gitconfig'
+2026-05-23T11:59:58.7656490Z Temporarily overriding HOME='/Users/runner/work/_temp/29068ca1-3a75-4761-a606-e45747bdbb2a' before making global git config changes
+2026-05-23T11:59:58.7657240Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-23T11:59:58.7663350Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/LiveSort-Electron/LiveSort-Electron
+2026-05-23T11:59:58.7752320Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-23T11:59:58.7807230Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-23T11:59:58.8478000Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-23T11:59:58.8518630Z http.https://github.com/.extraheader
+2026-05-23T11:59:58.8526030Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-05-23T11:59:58.8582270Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-23T11:59:58.9194360Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-23T11:59:58.9244870Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-23T11:59:58.9879550Z Cleaning up orphan processes
+2026-05-23T11:59:59.7705840Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

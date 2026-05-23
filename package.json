@@ -93,7 +93,10 @@
     "electron": "^30.0.0",
     "electron-builder": "^24.13.0"
   },
-  "author": "Everett406",
+  "author": {
+    "name": "Everett406",
+    "email": "noreply@github.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

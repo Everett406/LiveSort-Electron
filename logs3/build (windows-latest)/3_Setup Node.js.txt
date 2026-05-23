@@ -1,0 +1,16 @@
+﻿2026-05-23T11:58:02.1864283Z ##[group]Run actions/setup-node@v4
+2026-05-23T11:58:02.1864718Z with:
+2026-05-23T11:58:02.1864894Z   node-version: 20
+2026-05-23T11:58:02.1865107Z   always-auth: false
+2026-05-23T11:58:02.1865492Z   check-latest: false
+2026-05-23T11:58:02.1866083Z   token: ***
+2026-05-23T11:58:02.1866256Z ##[endgroup]
+2026-05-23T11:58:02.4328846Z Attempting to download 20...
+2026-05-23T11:58:03.3457267Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-win32-x64.7z
+2026-05-23T11:58:03.7813983Z Extracting ...
+2026-05-23T11:58:06.2523032Z Adding to the cache ...
+2026-05-23T11:58:09.6024241Z ##[group]Environment details
+2026-05-23T11:58:10.6916776Z node: v20.20.2
+2026-05-23T11:58:10.6917168Z npm: 10.8.2
+2026-05-23T11:58:10.6917411Z yarn: 1.22.22
+2026-05-23T11:58:10.6918068Z ##[endgroup]

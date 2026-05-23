@@ -1,0 +1,17 @@
+﻿2026-05-23T11:57:57.6800580Z ##[group]Run actions/setup-node@v4
+2026-05-23T11:57:57.6801510Z with:
+2026-05-23T11:57:57.6802020Z   node-version: 20
+2026-05-23T11:57:57.6802580Z   always-auth: false
+2026-05-23T11:57:57.6803150Z   check-latest: false
+2026-05-23T11:57:57.6803890Z   token: ***
+2026-05-23T11:57:57.6804400Z ##[endgroup]
+2026-05-23T11:57:57.8142310Z Attempting to download 20...
+2026-05-23T11:57:59.0506910Z Acquiring 20.20.2 - arm64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-darwin-arm64.tar.gz
+2026-05-23T11:57:59.7269530Z Extracting ...
+2026-05-23T11:57:59.7390660Z [command]/usr/bin/tar xz --strip 1 -C /Users/runner/work/_temp/5cc29813-ab92-4346-8d56-4718dc2a73cc -f /Users/runner/work/_temp/f5fa5eb7-7af3-4171-b736-9764706c3cc4
+2026-05-23T11:58:00.6541520Z Adding to the cache ...
+2026-05-23T11:58:02.0668090Z ##[group]Environment details
+2026-05-23T11:58:02.3394190Z node: v20.20.2
+2026-05-23T11:58:02.3394950Z npm: 10.8.2
+2026-05-23T11:58:02.3395180Z yarn: 1.22.22
+2026-05-23T11:58:02.3395860Z ##[endgroup]
