@@ -32,6 +32,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Clean dist directory
+        run: |
+          rm -rf dist/win-unpacked dist/linux-unpacked dist/mac dist/mac-arm64
+          rm -f dist/latest.yml dist/latest-mac.yml dist/latest-linux.yml
+          rm -f dist/*.blockmap
+          rm -f dist/builder-debug.yml
+        shell: bash
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
