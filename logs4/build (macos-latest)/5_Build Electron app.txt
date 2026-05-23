@@ -1,0 +1,31 @@
+﻿2026-05-23T12:02:08.5426520Z ##[group]Run npx electron-builder --publish=never
+2026-05-23T12:02:08.5426890Z [36;1mnpx electron-builder --publish=never[0m
+2026-05-23T12:02:08.5462870Z shell: /bin/bash -e {0}
+2026-05-23T12:02:08.5463020Z env:
+2026-05-23T12:02:08.5463470Z   GH_TOKEN: ***
+2026-05-23T12:02:08.5463640Z ##[endgroup]
+2026-05-23T12:02:09.3617120Z   • electron-builder  version=24.13.3 os=24.6.0
+2026-05-23T12:02:09.3649680Z   • loaded configuration  file=package.json ("build" field)
+2026-05-23T12:02:09.5843230Z   • packaging       platform=darwin arch=x64 electron=30.5.1 appOutDir=dist/mac
+2026-05-23T12:02:09.9466410Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-x64.zip size=102 MB parts=6
+2026-05-23T12:02:10.3733190Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-x64.zip duration=780ms
+2026-05-23T12:02:11.8008340Z   • default Electron icon is used  reason=application icon is not set
+2026-05-23T12:02:11.8417960Z   • skipped macOS application code signing  reason=cannot find valid "Developer ID Application" identity or custom non-Apple code signing certificate, it could cause some undefined behaviour, e.g. macOS localized description not visible, see https://electron.build/code-signing allIdentities=     0 identities found
+2026-05-23T12:02:11.8419100Z                                                 Valid identities only
+2026-05-23T12:02:11.8419370Z      0 valid identities found
+2026-05-23T12:02:11.8421640Z   • building        target=DMG arch=x64 file=dist/LiveSort-1.0.0.dmg
+2026-05-23T12:02:11.8423070Z   • building        target=macOS zip arch=x64 file=dist/LiveSort-1.0.0-mac.zip
+2026-05-23T12:02:11.8474960Z   • Detected arm64 process, HFS+ is unavailable. Creating dmg with APFS - supports Mac OSX 10.12+
+2026-05-23T12:02:11.8531970Z   • packaging       platform=darwin arch=arm64 electron=30.5.1 appOutDir=dist/mac-arm64
+2026-05-23T12:02:12.2654220Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-arm64.zip size=96 MB parts=6
+2026-05-23T12:02:12.7089980Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-darwin-arm64.zip duration=846ms
+2026-05-23T12:02:14.5611780Z   • skipped macOS application code signing  reason=cannot find valid "Developer ID Application" identity or custom non-Apple code signing certificate, it could cause some undefined behaviour, e.g. macOS localized description not visible, see https://electron.build/code-signing allIdentities=     0 identities found
+2026-05-23T12:02:14.5713400Z                                                 Valid identities only
+2026-05-23T12:02:14.5813750Z      0 valid identities found
+2026-05-23T12:02:14.5915320Z   • building        target=DMG arch=arm64 file=dist/LiveSort-1.0.0-arm64.dmg
+2026-05-23T12:02:14.6024990Z   • building        target=macOS zip arch=arm64 file=dist/LiveSort-1.0.0-arm64-mac.zip
+2026-05-23T12:02:14.6126160Z   • Detected arm64 process, HFS+ is unavailable. Creating dmg with APFS - supports Mac OSX 10.12+
+2026-05-23T12:02:54.0786490Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-arm64.dmg.blockmap
+2026-05-23T12:02:56.0814510Z   • building block map  blockMapFile=dist/LiveSort-1.0.0.dmg.blockmap
+2026-05-23T12:03:05.4547790Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-arm64-mac.zip.blockmap
+2026-05-23T12:03:08.9000740Z   • building block map  blockMapFile=dist/LiveSort-1.0.0-mac.zip.blockmap

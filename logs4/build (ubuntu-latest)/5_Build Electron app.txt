@@ -1,0 +1,19 @@
+﻿2026-05-23T12:02:06.5549530Z ##[group]Run npx electron-builder --publish=never
+2026-05-23T12:02:06.5549943Z [36;1mnpx electron-builder --publish=never[0m
+2026-05-23T12:02:06.5587653Z shell: /usr/bin/bash -e {0}
+2026-05-23T12:02:06.5587910Z env:
+2026-05-23T12:02:06.5588495Z   GH_TOKEN: ***
+2026-05-23T12:02:06.5588686Z ##[endgroup]
+2026-05-23T12:02:07.4096823Z   • electron-builder  version=24.13.3 os=6.17.0-1013-azure
+2026-05-23T12:02:07.4164471Z   • loaded configuration  file=package.json ("build" field)
+2026-05-23T12:02:07.5620984Z   • packaging       platform=linux arch=x64 electron=30.5.1 appOutDir=dist/linux-unpacked
+2026-05-23T12:02:07.6569054Z   • downloading     url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-linux-x64.zip size=104 MB parts=8
+2026-05-23T12:02:07.8540582Z   • downloaded      url=https://github.com/electron/electron/releases/download/v30.5.1/electron-v30.5.1-linux-x64.zip duration=286ms
+2026-05-23T12:02:09.4248861Z   • building        target=AppImage arch=x64 file=dist/LiveSort-1.0.0.AppImage
+2026-05-23T12:02:09.4336386Z   • default Electron icon is used  reason=application icon is not set
+2026-05-23T12:02:09.5770232Z   • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/appimage-12.0.1/appimage-12.0.1.7z size=1.6 MB parts=1
+2026-05-23T12:02:09.6120887Z   • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/appimage-12.0.1/appimage-12.0.1.7z duration=171ms
+2026-05-23T12:02:17.8066878Z   • building        target=deb arch=x64 file=dist/livesort-electron_1.0.0_amd64.deb
+2026-05-23T12:02:17.8097969Z   • adding autoupdate files for: deb. (Beta feature)  resourceDir=/home/runner/work/LiveSort-Electron/LiveSort-Electron/dist/linux-unpacked/resources
+2026-05-23T12:02:17.9646694Z   • downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/fpm-1.9.3-2.3.1-linux-x86_64/fpm-1.9.3-2.3.1-linux-x86_64.7z size=5.0 MB parts=1
+2026-05-23T12:02:18.0098475Z   • downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/fpm-1.9.3-2.3.1-linux-x86_64/fpm-1.9.3-2.3.1-linux-x86_64.7z duration=191ms

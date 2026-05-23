@@ -1,0 +1,88 @@
+﻿2026-05-23T12:01:49.7384807Z ##[group]Run actions/checkout@v4
+2026-05-23T12:01:49.7385592Z with:
+2026-05-23T12:01:49.7386011Z   repository: Everett406/LiveSort-Electron
+2026-05-23T12:01:49.7386778Z   token: ***
+2026-05-23T12:01:49.7387167Z   ssh-strict: true
+2026-05-23T12:01:49.7387561Z   ssh-user: git
+2026-05-23T12:01:49.7387952Z   persist-credentials: true
+2026-05-23T12:01:49.7388384Z   clean: true
+2026-05-23T12:01:49.7388771Z   sparse-checkout-cone-mode: true
+2026-05-23T12:01:49.7389232Z   fetch-depth: 1
+2026-05-23T12:01:49.7389606Z   fetch-tags: false
+2026-05-23T12:01:49.7389988Z   show-progress: true
+2026-05-23T12:01:49.7390377Z   lfs: false
+2026-05-23T12:01:49.7390736Z   submodules: false
+2026-05-23T12:01:49.7391121Z   set-safe-directory: true
+2026-05-23T12:01:49.7391940Z ##[endgroup]
+2026-05-23T12:01:49.8564987Z Syncing repository: Everett406/LiveSort-Electron
+2026-05-23T12:01:49.8567600Z ##[group]Getting Git version info
+2026-05-23T12:01:49.8568764Z Working directory is '/home/runner/work/LiveSort-Electron/LiveSort-Electron'
+2026-05-23T12:01:49.8570486Z [command]/usr/bin/git version
+2026-05-23T12:01:49.8602143Z git version 2.54.0
+2026-05-23T12:01:49.8628910Z ##[endgroup]
+2026-05-23T12:01:49.8653830Z Temporarily overriding HOME='/home/runner/work/_temp/be11a46d-ae71-414a-9021-601ab63030ad' before making global git config changes
+2026-05-23T12:01:49.8656605Z Adding repository directory to the temporary git global config as a safe directory
+2026-05-23T12:01:49.8659509Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LiveSort-Electron/LiveSort-Electron
+2026-05-23T12:01:49.8713794Z Deleting the contents of '/home/runner/work/LiveSort-Electron/LiveSort-Electron'
+2026-05-23T12:01:49.8717715Z ##[group]Initializing the repository
+2026-05-23T12:01:49.8722792Z [command]/usr/bin/git init /home/runner/work/LiveSort-Electron/LiveSort-Electron
+2026-05-23T12:01:49.8798390Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-05-23T12:01:49.8800347Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-05-23T12:01:49.8802786Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-05-23T12:01:49.8804141Z hint: call:
+2026-05-23T12:01:49.8804888Z hint:
+2026-05-23T12:01:49.8805767Z hint: 	git config --global init.defaultBranch <name>
+2026-05-23T12:01:49.8806848Z hint:
+2026-05-23T12:01:49.8807912Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-05-23T12:01:49.8809553Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-05-23T12:01:49.8810779Z hint:
+2026-05-23T12:01:49.8811478Z hint: 	git branch -m <name>
+2026-05-23T12:01:49.8821448Z hint:
+2026-05-23T12:01:49.8822903Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-05-23T12:01:49.8825702Z Initialized empty Git repository in /home/runner/work/LiveSort-Electron/LiveSort-Electron/.git/
+2026-05-23T12:01:49.8836155Z [command]/usr/bin/git remote add origin https://github.com/Everett406/LiveSort-Electron
+2026-05-23T12:01:49.8862559Z ##[endgroup]
+2026-05-23T12:01:49.8863667Z ##[group]Disabling automatic garbage collection
+2026-05-23T12:01:49.8868808Z [command]/usr/bin/git config --local gc.auto 0
+2026-05-23T12:01:49.8906956Z ##[endgroup]
+2026-05-23T12:01:49.8908579Z ##[group]Setting up auth
+2026-05-23T12:01:49.8915290Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-05-23T12:01:49.8954804Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-05-23T12:01:49.9297983Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-05-23T12:01:49.9333050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-05-23T12:01:49.9583594Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-05-23T12:01:49.9618889Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-05-23T12:01:49.9863675Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-05-23T12:01:49.9900956Z ##[endgroup]
+2026-05-23T12:01:49.9901987Z ##[group]Fetching the repository
+2026-05-23T12:01:49.9910659Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8cf0306d7eda08684e59a20b7919fabd9362cb67:refs/tags/v1.0.0
+2026-05-23T12:01:50.1853845Z From https://github.com/Everett406/LiveSort-Electron
+2026-05-23T12:01:50.1855173Z  * [new ref]         8cf0306d7eda08684e59a20b7919fabd9362cb67 -> v1.0.0
+2026-05-23T12:01:50.1887103Z ##[endgroup]
+2026-05-23T12:01:50.1887813Z ##[group]Determining the checkout info
+2026-05-23T12:01:50.1888923Z ##[endgroup]
+2026-05-23T12:01:50.1894320Z [command]/usr/bin/git sparse-checkout disable
+2026-05-23T12:01:50.1937641Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-05-23T12:01:50.1964770Z ##[group]Checking out the ref
+2026-05-23T12:01:50.1968331Z [command]/usr/bin/git checkout --progress --force refs/tags/v1.0.0
+2026-05-23T12:01:50.2061984Z Note: switching to 'refs/tags/v1.0.0'.
+2026-05-23T12:01:50.2062684Z 
+2026-05-23T12:01:50.2063215Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-05-23T12:01:50.2064246Z changes and commit them, and you can discard any commits you make in this
+2026-05-23T12:01:50.2065239Z state without impacting any branches by switching back to a branch.
+2026-05-23T12:01:50.2065989Z 
+2026-05-23T12:01:50.2066513Z If you want to create a new branch to retain commits you create, you may
+2026-05-23T12:01:50.2067709Z do so (now or later) by using -c with the switch command. Example:
+2026-05-23T12:01:50.2068389Z 
+2026-05-23T12:01:50.2069031Z   git switch -c <new-branch-name>
+2026-05-23T12:01:50.2069539Z 
+2026-05-23T12:01:50.2069808Z Or undo this operation with:
+2026-05-23T12:01:50.2070209Z 
+2026-05-23T12:01:50.2070439Z   git switch -
+2026-05-23T12:01:50.2070754Z 
+2026-05-23T12:01:50.2071302Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-05-23T12:01:50.2072382Z 
+2026-05-23T12:01:50.2072826Z HEAD is now at 8cf0306 chore: ignore CI logs and build artifacts
+2026-05-23T12:01:50.2075028Z ##[endgroup]
+2026-05-23T12:01:50.2199599Z [command]/usr/bin/git log -1 --format=%H
+2026-05-23T12:01:50.2200537Z 8cf0306d7eda08684e59a20b7919fabd9362cb67
