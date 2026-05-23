@@ -25,6 +25,9 @@ def main():
         # Data files
         f"--add-data={os.path.join(APP_DIR, 'templates')}{SEP}templates",
         f"--add-data={os.path.join(APP_DIR, 'static')}{SEP}static",
+        # Application modules (critical: prod.py imports these dynamically via uvicorn)
+        "--hidden-import=main",
+        "--hidden-import=audio_analyzer",
         # Uvicorn / FastAPI hidden imports
         "--hidden-import=uvicorn.logging",
         "--hidden-import=uvicorn.loops.auto",
