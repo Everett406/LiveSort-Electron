@@ -2,6 +2,7 @@ const { app, BrowserWindow, dialog } = require('electron');
 const { spawn } = require('child_process');
 const path = require('path');
 const net = require('net');
+const fs = require('fs');
 
 let mainWindow;
 let pythonProcess;
@@ -13,7 +14,6 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 640,
     title: 'LiveSort',
-    icon: path.join(__dirname, '..', 'LiveSortApp', 'static', 'livesort-brand-icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -49,23 +49,40 @@ function waitForPort(port, timeout = 60000) {
   });
 }
 
-function findPython() {
-  if (process.platform === 'win32') {
-    return 'python';
+function findBackendExecutable() {
+  const isPackaged = app.isPackaged;
+  const platform = process.platform;
+
+  if (isPackaged) {
+    // In packaged app, look inside resources/bin (extraResources)
+    const exeName = platform === 'win32' ? 'livesort-backend.exe' : 'livesort-backend';
+    const bundled = path.join(process.resourcesPath, 'bin', exeName);
+    if (fs.existsSync(bundled)) {
+      return { cmd: bundled, cwd: path.dirname(bundled) };
+    }
   }
-  return 'python3';
+
+  // Development fallback: system python
+  const pythonCmd = platform === 'win32' ? 'python' : 'python3';
+  const scriptPath = path.join(__dirname, '..', 'LiveSortApp', 'prod.py');
+  const cwdPath = path.join(__dirname, '..', 'LiveSortApp');
+  return { cmd: pythonCmd, args: [scriptPath], cwd: cwdPath };
 }
 
 app.whenReady().then(async () => {
-  const pythonCmd = findPython();
-  const scriptPath = path.join(__dirname, '..', 'LiveSortApp', 'prod.py');
-  const cwdPath = path.join(__dirname, '..', 'LiveSortApp');
+  const backend = findBackendExecutable();
+  const cwd = backend.cwd;
 
-  pythonProcess = spawn(pythonCmd, [scriptPath], {
-    cwd: cwdPath,
+  console.log(`[Electron] Starting backend: ${backend.cmd} ${(backend.args || []).join(' ')}`);
+  console.log(`[Electron] Backend CWD: ${cwd}`);
+
+  const spawnOpts = {
+    cwd: cwd,
     stdio: 'pipe',
     env: { ...process.env, PYTHONIOENCODING: 'utf-8' }
-  });
+  };
+
+  pythonProcess = spawn(backend.cmd, backend.args || [], spawnOpts);
 
   let stderrBuffer = '';
   pythonProcess.stdout.on('data', (data) => {
@@ -88,7 +105,7 @@ app.whenReady().then(async () => {
   } catch (err) {
     dialog.showErrorBox(
       'LiveSort 启动失败',
-      `无法启动 Python 后端服务。请确保已安装 Python 3.9+ 并配置了环境变量。\n\n错误详情：${err.message}\n\n后端日志：${stderrBuffer.slice(-500)}`
+      `无法启动后端服务。\n\n错误详情：${err.message}\n\n后端日志：${stderrBuffer.slice(-800)}`
     );
     app.quit();
   }

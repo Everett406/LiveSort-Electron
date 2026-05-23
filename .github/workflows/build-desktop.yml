@@ -24,6 +24,27 @@ jobs:
         with:
           node-version: 20
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          cd LiveSortApp
+          pip install -r requirements.txt
+          cd ..
+          pip install pyinstaller
+
+      - name: Build Python backend with PyInstaller
+        run: python build_backend.py
+        shell: bash
+
+      - name: Verify backend binary exists
+        run: |
+          ls -la bin/
+        shell: bash
+
       - name: Install Node dependencies
         run: npm install
 

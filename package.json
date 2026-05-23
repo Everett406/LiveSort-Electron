@@ -21,28 +21,14 @@
     },
     "files": [
       "electron/**/*",
-      "LiveSortApp/**/*",
-      "!LiveSortApp/venv{,/**/*}",
-      "!LiveSortApp/music_files{,/**/*}",
-      "!LiveSortApp/__pycache__{,/**/*}",
-      "!LiveSortApp/*.pyc",
-      "!LiveSortApp/.gitignore",
-      "!LiveSortApp/.python-version",
-      "!LiveSortApp/deploy.bat",
-      "!LiveSortApp/run.bat",
-      "!LiveSortApp/test.html"
+      "build_backend.py",
+      "package.json",
+      "package-lock.json"
     ],
     "extraResources": [
       {
-        "from": "LiveSortApp",
-        "to": "LiveSortApp",
-        "filter": [
-          "**/*",
-          "!venv",
-          "!music_files",
-          "!__pycache__",
-          "!*.pyc"
-        ]
+        "from": "bin",
+        "to": "bin"
       }
     ],
     "mac": {
