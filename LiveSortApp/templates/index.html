@@ -2797,6 +2797,7 @@
                 <div class="sans-text text-sm mb-6">
                     <div class="flex gap-3 w-full">
                         <input type="file" id="file-upload" multiple accept=".mp3,.wav,.flac,.m4a,.ncm" class="hidden" onchange="uploadFiles()">
+                        <input type="file" id="folder-upload" webkitdirectory directory multiple accept=".mp3,.wav,.flac,.m4a,.ncm" class="hidden" onchange="uploadFolderFiles()">
                         <button type="button" class="custom-file-upload flex-1 block sans-text text-xs uppercase tracking-wider" onclick="openFilePicker(true)">
                             <span class="lang-en uppercase tracking-wider">Add Songs</span>
                             <span class="lang-zh uppercase tracking-wider">添加歌曲</span>
@@ -2804,6 +2805,10 @@
                         <button type="button" class="custom-file-upload flex-1 block sans-text text-xs uppercase tracking-wider" onclick="openFilePicker(false)">
                             <span class="lang-en uppercase tracking-wider">New List</span>
                             <span class="lang-zh uppercase tracking-wider">添加新列表</span>
+                        </button>
+                        <button type="button" class="custom-file-upload flex-1 block sans-text text-xs uppercase tracking-wider" onclick="openFolderPicker(true)">
+                            <span class="lang-en uppercase tracking-wider">Add Folder</span>
+                            <span class="lang-zh uppercase tracking-wider">添加文件夹</span>
                         </button>
                     </div>
                     <div class="text-gray-400 mt-2 text-xs uppercase tracking-widest text-center">
@@ -7024,10 +7029,10 @@
             }
         }
 
-        async function uploadFiles() {
+        async function uploadFiles(customFiles) {
             const fileInput = document.getElementById('file-upload');
-            const files = fileInput.files;
-            if(files.length === 0) return;
+            const files = customFiles || fileInput.files;
+            if(!files || files.length === 0) return;
             const hasExistingSongs = Array.isArray(window.playlistSongs) && window.playlistSongs.length > 0;
             const effectiveAppendMode = uploadAppendMode && hasExistingSongs;
             window.numExistingBeforeUpload = effectiveAppendMode ? window.playlistSongs.length : 0;
@@ -7147,8 +7152,33 @@
             } finally {
                 document.body.classList.remove('uploading-files');
                 progressWrap.classList.remove('is-uploading');
-                fileInput.value = '';
+                if (fileInput && !customFiles) fileInput.value = '';
             }
+        }
+
+        function openFolderPicker(appendMode) {
+            uploadAppendMode = !!appendMode;
+            const folderInput = document.getElementById('folder-upload');
+            if (folderInput) folderInput.click();
+        }
+
+        async function uploadFolderFiles() {
+            const folderInput = document.getElementById('folder-upload');
+            if (!folderInput) return;
+            const allFiles = Array.from(folderInput.files || []);
+            const audioExts = ['.mp3', '.wav', '.flac', '.m4a', '.ncm'];
+            const filtered = allFiles.filter(f => {
+                const name = f.name.toLowerCase();
+                return audioExts.some(ext => name.endsWith(ext));
+            });
+            if (filtered.length === 0) {
+                const isZhMode = document.body.classList.contains('zh-mode');
+                alert(isZhMode ? '未找到支持的音频文件' : 'No supported audio files found');
+                if (folderInput) folderInput.value = '';
+                return;
+            }
+            await uploadFiles(filtered);
+            if (folderInput) folderInput.value = '';
         }
 
         async function startAnalysis(forceSort = false) {
