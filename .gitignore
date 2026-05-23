@@ -8,3 +8,4 @@ logs3.zip
 node_modules/
 dist/
 
+logs*
