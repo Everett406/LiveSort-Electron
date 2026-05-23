@@ -13,6 +13,7 @@
   "build": {
     "appId": "top.lun3cy.livesort",
     "productName": "LiveSort",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
     "copyright": "Copyright © 2024 LuN3cy",
     "directories": {
       "output": "dist",
