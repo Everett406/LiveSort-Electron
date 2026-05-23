@@ -1,0 +1,105 @@
+{
+  "name": "livesort-electron",
+  "version": "1.0.0",
+  "description": "LiveSort Desktop — 本地音乐无感过渡与自动排序工具",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "top.lun3cy.livesort",
+    "productName": "LiveSort",
+    "copyright": "Copyright © 2024 LuN3cy",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "LiveSortApp/**/*",
+      "!LiveSortApp/venv{,/**/*}",
+      "!LiveSortApp/music_files{,/**/*}",
+      "!LiveSortApp/__pycache__{,/**/*}",
+      "!LiveSortApp/*.pyc",
+      "!LiveSortApp/.gitignore",
+      "!LiveSortApp/.python-version",
+      "!LiveSortApp/deploy.bat",
+      "!LiveSortApp/run.bat",
+      "!LiveSortApp/test.html"
+    ],
+    "extraResources": [
+      {
+        "from": "LiveSortApp",
+        "to": "LiveSortApp",
+        "filter": [
+          "**/*",
+          "!venv",
+          "!music_files",
+          "!__pycache__",
+          "!*.pyc"
+        ]
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "category": "public.app-category.music",
+      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "AudioVideo",
+      "icon": "LiveSortApp/static/livesort-brand-icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.0"
+  },
+  "author": "Everett406",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Everett406/LiveSort-Electron.git"
+  }
+}
