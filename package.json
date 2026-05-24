@@ -1,6 +1,6 @@
 {
   "name": "livesort-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LiveSort Desktop — 本地音乐无感过渡与自动排序工具",
   "main": "electron/main.js",
   "scripts": {
@@ -69,6 +69,10 @@
         }
       ],
       "category": "AudioVideo"
+    },
+    "portable": {
+      "requestExecutionLevel": "user",
+      "unpackDirName": "livesort-portable"
     },
     "nsis": {
       "artifactName": "${productName}-Setup-${version}-${arch}.${ext}",
