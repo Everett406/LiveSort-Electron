@@ -21,6 +21,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 640,
     title: 'LiveSort',
+    show: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -28,11 +29,20 @@ function createWindow() {
     }
   });
 
-  mainWindow.loadURL('http://127.0.0.1:8000');
+  // Show loading screen immediately
+  mainWindow.loadFile(path.join(__dirname, 'loading.html'));
 
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  return mainWindow;
+}
+
+function loadMainApp() {
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.loadURL('http://127.0.0.1:8000');
+  }
 }
 
 function waitForPort(port, timeout = 60000) {
@@ -79,6 +89,9 @@ function findBackendExecutable() {
 }
 
 app.whenReady().then(async () => {
+  // Create window immediately so user sees something
+  createWindow();
+
   const backend = findBackendExecutable();
   const logFile = getLogPath();
   const logStream = fs.createWriteStream(logFile, { flags: 'a' });
@@ -141,7 +154,7 @@ app.whenReady().then(async () => {
   try {
     await waitForPort(8000);
     logStream.write('[Electron] Backend port 8000 is ready\n');
-    createWindow();
+    loadMainApp();
   } catch (err) {
     logStream.write(`[Electron] Timeout waiting for port: ${err.message}\n`);
     logStream.write(`[Electron] stderr tail:\n${stderrBuffer.slice(-2000)}\n`);
@@ -156,7 +169,10 @@ app.whenReady().then(async () => {
   }
 
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+      loadMainApp();
+    }
   });
 });
 

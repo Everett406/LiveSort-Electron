@@ -476,6 +476,11 @@ async def read_algorithm(request: Request, embedded: int = 0):
         detail = f"Algorithm page render failed: {e}\n{traceback.format_exc()}"
         return HTMLResponse(f"<pre>{detail}</pre>", status_code=500)
 
+@app.get("/algorithm.html", response_class=HTMLResponse)
+async def read_algorithm_html(request: Request, embedded: int = 0):
+    """Alias for /algorithm to support direct .html links."""
+    return await read_algorithm(request, embedded)
+
 @app.post("/analyze")
 async def analyze_music(request: Request):
     """Trigger the analysis of the 'music_files' directory."""
