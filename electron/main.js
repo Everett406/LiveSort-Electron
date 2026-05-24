@@ -21,16 +21,11 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 640,
     title: 'LiveSort',
-    show: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     }
-  });
-
-  mainWindow.once('ready-to-show', () => {
-    mainWindow.show();
   });
 
   mainWindow.loadURL('http://127.0.0.1:8000');
@@ -67,19 +62,16 @@ function findBackendExecutable() {
 
   if (isPackaged) {
     const exeName = platform === 'win32' ? 'livesort-backend.exe' : 'livesort-backend';
-    // PyInstaller onedir outputs to bin/livesort-backend/<exe>
     const bundled = path.join(process.resourcesPath, 'bin', 'livesort-backend', exeName);
     if (fs.existsSync(bundled)) {
       return { cmd: bundled, cwd: path.dirname(bundled), source: 'bundled' };
     }
-    // Fallback: directly under bin/
     const bundledFlat = path.join(process.resourcesPath, 'bin', exeName);
     if (fs.existsSync(bundledFlat)) {
       return { cmd: bundledFlat, cwd: path.dirname(bundledFlat), source: 'bundled-flat' };
     }
   }
 
-  // Development fallback: system python
   const pythonCmd = platform === 'win32' ? 'python' : 'python3';
   const scriptPath = path.join(__dirname, '..', 'LiveSortApp', 'prod.py');
   const cwdPath = path.join(__dirname, '..', 'LiveSortApp');
