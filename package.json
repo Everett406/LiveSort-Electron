@@ -19,6 +19,7 @@
       "output": "dist",
       "buildResources": "build"
     },
+    "icon": "build/icon.png",
     "files": [
       "electron/**/*",
       "build_backend.py",
